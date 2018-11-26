@@ -8,6 +8,20 @@ spring:
       discovery:
         enabled: true
         serviceId: CONFIG-SERVER
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+     exposure:
+       include: bus-refresh
 eureka:
   client:
     serviceUrl:

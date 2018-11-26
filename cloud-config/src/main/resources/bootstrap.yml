@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+          uri: https://github.com/jinxing0000/cloud-config.git
+          search-paths: config-repo
+          username: jinxing0000
+          password: yjx484998.
+management:
+  endpoints:
+    web:
+     exposure:
+       include: bus-refresh
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
