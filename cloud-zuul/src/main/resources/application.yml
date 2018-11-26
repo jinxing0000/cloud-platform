@@ -6,7 +6,7 @@ server:
   port: 8861
 spring:
   application:
-    name: cloud-zuul
+    name: zuul-server
 ribbon:
   ReadTimeout: 60000
   ConnectTimeout: 60000
@@ -24,4 +24,4 @@ zuul:
   routes:
     api-sys:
       path: /api-sys/**
-      serviceId: system-feign
+      serviceId: system-web-server

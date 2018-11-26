@@ -16,7 +16,7 @@ management:
         allowed-origins: "*"
         allowed-methods: "*"
 turbine:
-  app-config: system-server,system-fengin
+  app-config: system-server,system-web-server
   aggregator:
     clusterConfig: default
   clusterNameExpression: new String("default")
