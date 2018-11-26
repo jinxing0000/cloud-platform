@@ -1,4 +1,4 @@
-package com.bettem.platform.system.server;
+package com.bettem.hystrix.trubine;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.SpringApplication;
@@ -9,28 +9,30 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
+import org.springframework.cloud.netflix.turbine.EnableTurbine;
 import org.springframework.context.annotation.Bean;
 
+/**
+ * 山西百得科技开发股份有限公司 版权所有 © Copyright 2018<br>
+ *
+ * @Description:
+ * @Project: cloud-platform
+ * @CreateDate: Created in 2018/11/26 11:51 <br>
+ * @Author: 颜金星
+ */
 @SpringBootApplication
-@EnableDiscoveryClient
 @EnableEurekaClient
-
+@EnableDiscoveryClient
 @EnableHystrix
 @EnableHystrixDashboard
 @EnableCircuitBreaker
-public class SystemServerApplication {
-
+@EnableTurbine
+public class HystrixTrubineApplication {
+    /**
+     *   访问：http://localhost:8764/hystrix
+     *   添加：http://localhost:8764/turbine.stream
+     */
     public static void main(String[] args) {
-        SpringApplication.run(SystemServerApplication.class, args);
-    }
-
-    @Bean
-    public ServletRegistrationBean getServlet() {
-        HystrixMetricsStreamServlet streamServlet = new HystrixMetricsStreamServlet();
-        ServletRegistrationBean registrationBean = new ServletRegistrationBean(streamServlet);
-        registrationBean.setLoadOnStartup(1);
-        registrationBean.addUrlMappings("/hystrix.stream");
-        registrationBean.setName("HystrixMetricsStreamServlet");
-        return registrationBean;
+        SpringApplication.run( HystrixTrubineApplication.class, args );
     }
 }

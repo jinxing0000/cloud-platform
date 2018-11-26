@@ -1,6 +1,10 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 spring:
   application:
-    name: system-server
+    name: system-feign
   cloud:
     config:
       profile: dev
@@ -19,12 +23,6 @@ spring:
     password: guest
   zipkin:
     base-url: http://localhost:9411
-management:
-  endpoints:
-    web:
-     exposure:
-       include: ["hystrix-stream","bus-refresh"]
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
+feign:
+   hystrix:
+       enabled: true

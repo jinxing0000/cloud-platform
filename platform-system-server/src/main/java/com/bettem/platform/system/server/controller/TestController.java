@@ -1,5 +1,6 @@
 package com.bettem.platform.system.server.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,8 +28,13 @@ public class TestController {
     String url;
 
     @RequestMapping("/hi")
+    @HystrixCommand(fallbackMethod = "hiError")
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
         log.debug("配置中心URL:"+url);
         return "hi " + name + " ,i am from port:" + port+url;
+    }
+
+    public String hiError(String name) {
+        return "hi,"+name+",sorry,error!";
     }
 }
