@@ -1,0 +1,22 @@
+---
+spring:
+  profiles: peer1                                 # 指定profile=peer1
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: localhost                               # 指定当profile=peer1时，主机名
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/      # 将自己注册到peer2这个Eureka上面去
+---
+spring:
+  profiles: peer2                                 # 指定profile=peer2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: localhost                               # 指定当profile=peer2时，主机名
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/     # 将自己注册到peer1这个Eureka上面去

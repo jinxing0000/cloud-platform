@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: system-server
+  cloud:
+    config:
+      profile: dev
+      label: master
+      discovery:
+        enabled: true
+        serviceId: CONFIG-SERVER
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:8761/eureka/
