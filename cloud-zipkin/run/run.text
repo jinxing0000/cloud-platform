@@ -1,0 +1,2 @@
+运行命令：java -jar zipkin-server-2.9.4-exec.jar  --zipkin.collector.rabbitmq.addresses=127.0.0.1
+资料URL：https://blog.csdn.net/hubo_88/article/details/80889973

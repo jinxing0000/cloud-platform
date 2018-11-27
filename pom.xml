@@ -14,6 +14,7 @@
         <module>cloud-zuul</module>
         <module>cloud-config</module>
         <module>cloud-hystrix-turbine</module>
+        <module>platform-common</module>
     </modules>
 
     <parent>
