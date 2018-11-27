@@ -5,6 +5,8 @@ eureka:
 spring:
   application:
     name: system-web-server
+  profiles:
+    active: dev
   cloud:
     config:
       profile: dev
