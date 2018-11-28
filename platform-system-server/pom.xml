@@ -20,7 +20,7 @@
     <dependencies>
         <dependency>
             <groupId>com.bettem</groupId>
-            <artifactId>platform-common</artifactId>
+            <artifactId>platform-server-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>

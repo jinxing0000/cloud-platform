@@ -15,6 +15,7 @@
         <module>cloud-config</module>
         <module>cloud-hystrix-turbine</module>
         <module>platform-common</module>
+        <module>platform-server-common</module>
     </modules>
 
     <parent>
@@ -32,6 +33,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.M3</spring-cloud.version>
+        <oracle.version>11.2.0.3</oracle.version>
+        <druid.version>1.1.10</druid.version>
+        <mybatisplus.version>2.1.9</mybatisplus.version>
+        <mybatisplus.spring.boot.version>1.0.5</mybatisplus.spring.boot.version>
     </properties>
 
     <dependencies>
