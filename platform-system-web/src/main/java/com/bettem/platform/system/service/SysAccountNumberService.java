@@ -1,5 +1,7 @@
 package com.bettem.platform.system.service;
 
+import com.bettem.platform.common.base.BaseService;
+import com.bettem.platform.common.base.fegin.BaseFegin;
 import com.bettem.platform.system.fegin.SysAccountNumberFegin;
 import com.bettem.platform.system.model.SysAccountNumberModel;
 import org.apache.ibatis.annotations.Param;
@@ -15,17 +17,13 @@ import org.springframework.stereotype.Service;
  * @Author: 颜金星
  */
 @Service("sysAccountNumberService")
-public class SysAccountNumberService {
+public class SysAccountNumberService extends BaseService<SysAccountNumberFegin,SysAccountNumberModel> {
     @Autowired
-    private SysAccountNumberFegin sysAccountNumberFegin;
-    /**
-     * @Param [id]
-     * @Return: com.bettem.platform.system.model.SysAccountNumberModel
-     * @Decription: 按照id查询账号信息
-     * @CreateDate: Created in 2018/11/28 14:27
-     * @Author: 颜金星
-     */
-    public SysAccountNumberModel getInfoById(String id){
-        return sysAccountNumberFegin.getModelById(id);
+    public void setFegin(SysAccountNumberFegin sysAccountNumberFegin) {
+        this.fegin=sysAccountNumberFegin;
+    }
+
+    public SysAccountNumberModel getInfo(String id){
+        return this.fegin.getById(id);
     }
 }

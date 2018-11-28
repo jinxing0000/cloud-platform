@@ -1,5 +1,6 @@
 package com.bettem.platform.system.fegin;
 
+import com.bettem.platform.common.base.fegin.BaseFegin;
 import com.bettem.platform.common.config.FeignConfig;
 import com.bettem.platform.system.fegin.fallback.SysAccountNumberFallback;
 import com.bettem.platform.system.model.SysAccountNumberModel;
@@ -16,16 +17,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @CreateDate: Created in 2018/11/28 11:44 <br>
  * @Author: 颜金星
  */
-@FeignClient(name = "system-server",configuration = FeignConfig.class)
-public interface SysAccountNumberFegin {
-    /**
-     * @Param [id]
-     * @Return: 
-     * @Decription: 按照id查询账号信息
-     * @CreateDate: Created in 2018/11/28 15:39
-     * @Author: 颜金星
-     */
-    
-    @RequestMapping(method = RequestMethod.GET, value = "/getModelById")
-    SysAccountNumberModel getModelById(@RequestParam("id") String id);
+@FeignClient(name = "system-server",configuration = FeignConfig.class,fallback = SysAccountNumberFallback.class)
+public interface SysAccountNumberFegin extends BaseFegin<SysAccountNumberModel> {
+    @RequestMapping(method = RequestMethod.GET, value = "/getById")
+    SysAccountNumberModel getById(@RequestParam("id") String id);
 }

@@ -1,6 +1,7 @@
 package com.bettem.platform.system.provider;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.bettem.platform.common.base.provider.BaseProviderImpl;
 import com.bettem.platform.datasources.DataSourceNames;
 import com.bettem.platform.datasources.annotation.DataSource;
 import com.bettem.platform.system.fegin.SysAccountNumberFegin;
@@ -21,14 +22,10 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RefreshScope
-public class SysAccountNumberFeginImpl implements SysAccountNumberFegin {
-
-    @Autowired
-    private SysAccountNumberMapper sysAccountNumberMapper;
-
+public class SysAccountNumberFeginImpl extends BaseProviderImpl<SysAccountNumberMapper, SysAccountNumberModel> implements SysAccountNumberFegin {
     @Override
     @DataSource(name = DataSourceNames.READ)
-    public SysAccountNumberModel getModelById(@RequestParam("id") String id) {
-        return sysAccountNumberMapper.selectModelById(id);
+    public SysAccountNumberModel getById(String id) {
+        return this.baseMapper.selectModelById(id);
     }
 }
