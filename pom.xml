@@ -16,6 +16,7 @@
         <module>cloud-hystrix-turbine</module>
         <module>platform-common</module>
         <module>platform-server-common</module>
+        <module>platform-web-common</module>
     </modules>
 
     <parent>
