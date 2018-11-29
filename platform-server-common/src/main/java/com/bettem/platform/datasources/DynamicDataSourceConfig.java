@@ -1,6 +1,7 @@
 package com.bettem.platform.datasources;
 
 import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceBuilder;
+import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,5 +38,13 @@ public class DynamicDataSourceConfig {
         targetDataSources.put(DataSourceNames.WRITE, writeDataSource);
         targetDataSources.put(DataSourceNames.READ, readDataSource);
         return new DynamicDataSource(readDataSource, targetDataSources);
+    }
+
+    /**
+     * 分页插件
+     */
+    @Bean
+    public PaginationInterceptor paginationInterceptor() {
+        return new PaginationInterceptor();
     }
 }

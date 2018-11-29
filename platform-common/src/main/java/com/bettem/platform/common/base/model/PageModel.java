@@ -16,6 +16,7 @@
 
 package com.bettem.platform.common.base.model;
 
+
 import com.baomidou.mybatisplus.plugins.Page;
 
 import java.io.Serializable;
@@ -27,7 +28,7 @@ import java.util.List;
  * @author 颜金星
  * @date 2018年11月29日 下午12:59:00
  */
-public class PageModel implements Serializable {
+public class PageModel<T extends BaseModel> implements Serializable {
 	private static final long serialVersionUID = 1L;
 	//总记录数
 	private int totalCount;
@@ -38,12 +39,12 @@ public class PageModel implements Serializable {
 	//当前页数
 	private int currPage;
 	//列表数据
-	private List<?> list;
+	private List<T> list;
 
 	public PageModel(){
 
 	}
-	
+
 	/**
 	 * 分页
 	 * @param list        列表数据
@@ -51,7 +52,7 @@ public class PageModel implements Serializable {
 	 * @param pageSize    每页记录数
 	 * @param currPage    当前页数
 	 */
-	public PageModel(List<?> list, int totalCount, int pageSize, int currPage) {
+	public PageModel(List<T> list, int totalCount, int pageSize, int currPage) {
 		this.list = list;
 		this.totalCount = totalCount;
 		this.pageSize = pageSize;
@@ -62,7 +63,7 @@ public class PageModel implements Serializable {
 	/**
 	 * 分页
 	 */
-	public PageModel(Page<?> page) {
+	public PageModel(Page<T> page) {
 		this.list = page.getRecords();
 		this.totalCount = page.getTotal();
 		this.pageSize = page.getSize();
@@ -102,12 +103,11 @@ public class PageModel implements Serializable {
 		this.currPage = currPage;
 	}
 
-	public List<?> getList() {
+	public List<T> getList() {
 		return list;
 	}
 
-	public void setList(List<?> list) {
+	public void setList(List<T> list) {
 		this.list = list;
 	}
-	
 }
