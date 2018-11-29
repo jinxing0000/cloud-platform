@@ -17,8 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @CreateDate: Created in 2018/11/28 11:44 <br>
  * @Author: 颜金星
  */
-@FeignClient(name = "system-server",configuration = FeignConfig.class,fallback = SysAccountNumberFallback.class)
+@FeignClient(name = "system-server",configuration = FeignConfig.class)
 public interface SysAccountNumberFegin extends BaseFegin<SysAccountNumberModel> {
-    @RequestMapping(method = RequestMethod.GET, value = "/getById")
-    SysAccountNumberModel getById(@RequestParam("id") String id);
+
 }

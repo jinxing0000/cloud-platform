@@ -23,9 +23,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RefreshScope
 public class SysAccountNumberFeginImpl extends BaseProviderImpl<SysAccountNumberMapper, SysAccountNumberModel> implements SysAccountNumberFegin {
-    @Override
-    @DataSource(name = DataSourceNames.READ)
-    public SysAccountNumberModel getById(String id) {
-        return this.baseMapper.selectModelById(id);
-    }
+
 }

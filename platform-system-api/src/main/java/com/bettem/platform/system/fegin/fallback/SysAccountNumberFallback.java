@@ -16,8 +16,4 @@ import org.springframework.stereotype.Component;
 @Component
 public class SysAccountNumberFallback extends BaseHystrixFallback<SysAccountNumberModel> implements SysAccountNumberFegin {
 
-    @Override
-    public SysAccountNumberModel getById(String id) {
-        return null;
-    }
 }

@@ -1,10 +1,8 @@
 package com.bettem.platform.system.service;
 
-import com.bettem.platform.common.base.BaseService;
-import com.bettem.platform.common.base.fegin.BaseFegin;
+import com.bettem.platform.common.base.service.BaseService;
 import com.bettem.platform.system.fegin.SysAccountNumberFegin;
 import com.bettem.platform.system.model.SysAccountNumberModel;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,9 +19,5 @@ public class SysAccountNumberService extends BaseService<SysAccountNumberFegin,S
     @Autowired
     public void setFegin(SysAccountNumberFegin sysAccountNumberFegin) {
         this.fegin=sysAccountNumberFegin;
-    }
-
-    public SysAccountNumberModel getInfo(String id){
-        return this.fegin.getById(id);
     }
 }

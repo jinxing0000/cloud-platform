@@ -14,13 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface SysAccountNumberMapper extends BaseDaoMapper<SysAccountNumberModel> {
-    /**
-     * @Param
-     * @Return: 
-     * @Decription: 按照id查询账号信息
-     * @CreateDate: Created in 2018/11/28 15:04
-     * @Author: 颜金星
-     */
 
-    SysAccountNumberModel selectModelById(String id);
 }
