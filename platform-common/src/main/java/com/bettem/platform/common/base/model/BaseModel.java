@@ -1,7 +1,7 @@
 package com.bettem.platform.common.base.model;
 
 import com.baomidou.mybatisplus.annotations.TableId;
-import com.fasterxml.jackson.annotation.JsonFormat;
+//import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
@@ -44,7 +44,7 @@ public class BaseModel implements Serializable {
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     public Date getCreateDate() {
         return createDate;
     }
@@ -60,7 +60,7 @@ public class BaseModel implements Serializable {
     public void setModifyDate(Date modifyDate) {
         this.modifyDate = modifyDate;
     }
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     public Date getModifyDate() {
         return modifyDate;
     }
