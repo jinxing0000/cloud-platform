@@ -17,6 +17,7 @@
         <module>platform-common</module>
         <module>platform-server-common</module>
         <module>platform-web-common</module>
+        <module>platform-oauth-server</module>
     </modules>
 
     <parent>
