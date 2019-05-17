@@ -10,6 +10,13 @@ package com.bettem.platform.config;
  */
 public class Utils {
     public static class RESOURCEIDS {
-        static final String ORDER = "order";
+        /**
+         * 系统管理模块web消费者服务
+         */
+        public static final String SYSTEM_WEB_SERVER = "system-web-server";
+        /**
+         * 系统管理模块生产者服务
+         */
+        public static final String SYSTEM_SERVER = "system-server";
     }
 }

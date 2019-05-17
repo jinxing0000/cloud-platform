@@ -21,6 +21,6 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/**").authenticated(); //所有请求必须经过认证
+                .antMatchers("/sysAccountNumber/**").authenticated(); //所有请求必须经过认证
     }
 }
